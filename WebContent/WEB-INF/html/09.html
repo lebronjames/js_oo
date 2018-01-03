@@ -1,0 +1,33 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		/*
+		构造函数 + 原型
+		最常用的构造对象的模式
+		既能够灵活定义属性
+		也不用重复包含方法
+		同时也支持instanceof判断类型
+		*/
+		function Animal = (name) {
+			this.name = name;
+			this.friends = ["dog","cat"];
+		}
+		
+		Animal.prototype.sayName = function() {
+			alert(this.name);	
+		}
+		
+		var a1 = new Animal();
+		var a2 = new Animal();
+		
+		alert(a1.sayName == a2.sayName);
+		a1.sayName();
+		
+		alert(Animal.prototype.constructor);
+		
+		a1.friends.push("snake");
+		alert(a2.friends);
+		</script>
+	</body>
+</html>

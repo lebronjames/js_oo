@@ -1,0 +1,32 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		/*
+		原型模式 2
+		不能像构造函数一样定义任意属性
+		在包含引用对象时问题更加突出
+		*/
+		function Animal = () {}
+		
+		Animal.prototype = {
+			name : "animal",
+			friends : ["dog","cat"],
+			sayName = function(){
+				alert(this.name);	
+			}
+		}
+		
+		var a1 = new Animal();
+		var a2 = new Animal();
+		
+		alert(a1.sayName == a2.sayName);
+		a1.sayName();
+		
+		alert(Animal.prototype.constructor);
+		
+		a1.friends.push("snake");
+		alert(a2.friends);
+		</script>
+	</body>
+</html>

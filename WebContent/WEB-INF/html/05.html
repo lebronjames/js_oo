@@ -1,0 +1,40 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+			/*
+			构造函数模式
+			可以明确标识类型
+			每个方法都要在每个实例重新创建一遍
+			可以用创建全局函数解决，但是这种方法破坏了封装
+			*/
+			/*
+			function _sayName(){
+				alert(this.name);
+			}
+			*/
+			function Person(name){
+				this.name = name;
+				this.sayName = function(){
+					alert(this.name);
+				};
+				
+				//this.sayName = _sayName;
+			}
+
+			var p1 = new Person("zhangsan");
+			var p2 = new Person("lisi");
+			
+			p1.sayName();
+			p2.sayName();
+			
+			alert("p1 sayName 是否与p2 sayName相同？ " + (p1.sayName==p2.sayName));//false
+			alert(p1.constructor == p2.constructor);//true
+			alert(p1.constructor == Person);//true
+			alert(p1.constructor);
+			alert(typeof(p1));//objcet
+			alert(p1 instanceof Objcet);
+			alert(p1 instanceof Person);
+		</script>
+	</body>
+</html>

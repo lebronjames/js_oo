@@ -1,0 +1,24 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		/*
+		原型模式
+		*/
+		function Animal = () {}
+		
+		Animal.prototype.name = "animal";
+		Animal.prototype.sayName = function(){
+			alert(this.name);	
+		};
+		
+		var a1 = new Animal();
+		var a2 = new Animal();
+		
+		alert(a1.sayName == a2.sayName);
+		a1.sayName();
+		
+		alert(Animal.prototype.constructor);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+			/*
+			工厂模式
+			虽然解决了创建多个类型对象的问题，但是没有解决对象类型的问题
+			*/
+			function createPerson(name){
+				var o = new Object();
+				o.name = name;
+				o.sayName = function(){
+					alert(this.name);
+				};
+				return o;
+			}
+			
+			var person = createPerson("zhangsan");
+			person.sayName();
+			
+			var person2 = createPerson("lisi");
+			person2.sayName();
+			
+			alert(person.sayName == person2.sayName);//false
+			alert(person instanceof Object);//true
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+			/*
+			1: 没有特定的类型
+			2: 如果要定义类似对象，代码重复
+			*/
+			var o1 = {};
+			o1.name = "zhangsan";
+			
+			o1.sayName = function(){
+				alert(this.name);
+			}
+			
+			var o2 = {};
+			o2.name = "lisi";
+			
+			o2.sayName = function(){
+				alert(this.name);
+			}
+			//不同对象是不同方法
+			alert(o1.sayName == o2.sayName);//false
+		</script>
+	</body>
+</html>
